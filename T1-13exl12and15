@@ -1,0 +1,182 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char** argv) {
+	int task_num;
+	printf("Enter the task number: \n");
+	scanf("%d", &task_num);
+    
+	if(task_num==1)
+	{
+		char name[50];
+	    char familyname[50];
+	
+	    printf("Vvedite svoi imya i familiyu: \n");
+	    scanf("%s", name);
+	    scanf("%s", familyname);
+	
+	    printf("Vashi imya i familiya: %s %s\n", name, familyname);
+	    printf("Zdravstvuite, %s %s", name, familyname);
+	}
+	else if (task_num==2)
+	{
+		char nameoffootballteam[50];
+	
+	    printf("Vvedite nazvanie futbol'noi komandy: \n");
+	    gets(nameoffootballteam);
+	
+	    printf("%s - chempion", nameoffootballteam);
+	}
+	else if (task_num==3)
+	{
+		char name[50];
+	    char familyname[50];
+	
+	    printf("Vvedite svoe imya i vvedite probel posle svoego imeni: \n");
+	    gets(name);
+	    printf("Vvedite svoyu familiyu: \n");	
+	    gets(familyname);
+	    strcat(name, familyname);
+	    puts(name);
+	}
+	else if (task_num==4)
+	{
+		char state[50];
+	    char capital[50];
+	
+	    printf("Vvedite nazvanie gosudarstva:\n");
+	    gets(state);
+	    printf("Vvedite ego stolicu:\n");
+	    gets(capital);
+	    printf("Stolica gosudarstva %s - gorod %s", state, capital);	
+	}
+	else if (task_num==5)
+	{
+		char footballteam[50];
+	
+	    printf("Vvedite nazvanie futbol'nogo kluba:\n");
+	    gets(footballteam);
+	    printf("Kolichestvo simvolov futbol'nogo kluba %s ravno: %d", footballteam, strlen(footballteam));	
+	}
+	else if (task_num==6)
+	{
+		char nameofcity[50];
+	
+	    printf("Vvedite nazvanie goroda:\n");
+	    gets(nameofcity);
+	    if(strlen(nameofcity)%2==0)
+	        printf("Kolichestvo simvolov v nazvanii goroda chetno.");
+	    else
+	        printf("Kolichestvo simvolov v nazvanii goroda nechetno.");
+	}
+	else if (task_num==7)
+	{
+		char familyname1[50];
+	    char familyname2[50];
+	
+	    printf("Vvedite 1 familiyu:\n");
+	    scanf("%s", familyname1);
+	    printf("Vvedite 2 familiyu:\n");
+		scanf("%s", familyname2);
+		if(strlen(familyname1)>strlen(familyname2))
+	    	printf("1 familiya dlinee 2.");
+		else
+	    	printf("2 familiya dlinne 1.");
+	}
+	else if (task_num==8)
+	{
+		char nameofcity1[50];
+		char nameofcity2[50];
+		char nameofcity3[50];
+	
+		printf("Vvedite nazvanie 1 goroda:\n");
+		gets(nameofcity1);
+		printf("Vvedite nazvanie 2 goroda:\n");
+		gets(nameofcity2);
+		printf("Vvedite nazvanie 3 goroda:\n");
+		gets(nameofcity3);
+	
+		if((strlen(nameofcity1)>strlen(nameofcity2))&&(strlen(nameofcity2)>strlen(nameofcity3)))
+	    	printf("Samoe dlinnoe nazvanie %s i samoe korotkoe nazvanie %s", nameofcity1, nameofcity3);
+		else if ((strlen(nameofcity1)<strlen(nameofcity2))&&(strlen(nameofcity2)<strlen(nameofcity3)))
+	    	printf("Samoe dlinnoe nazvanie %s i samoe korotkoe nazvanie %s", nameofcity3, nameofcity1);
+    	else if ((strlen(nameofcity2)>strlen(nameofcity1))&&(strlen(nameofcity1)>strlen(nameofcity3)))
+        	printf("Samoe dlinnoe nazvanie %s i samoe korotkoe nazvanie %s", nameofcity2, nameofcity3);
+    	else if ((strlen(nameofcity2)<strlen(nameofcity1))&&(strlen(nameofcity1)<strlen(nameofcity3)))
+	    	printf("Samoe dlinnoe nazvanie %s i samoe korotkoe nazvanie %s", nameofcity3, nameofcity2);
+		else if ((strlen(nameofcity1)>strlen(nameofcity3))&&(strlen(nameofcity3)>strlen(nameofcity2)))
+	    	printf("Samoe dlinnoe nazvanie %s i samoe korotkoe nazvanie %s", nameofcity1, nameofcity2);
+		else if ((strlen(nameofcity1)<strlen(nameofcity3))&&(strlen(nameofcity3)<strlen(nameofcity2)))
+	    	printf("Samoe dlinnoe nazvanie %s i samoe korotkoe nazvanie %s", nameofcity2, nameofcity1);
+	}
+	else if (task_num==9)
+	{
+		char word[]="Almaty";
+	
+		printf("3 symvol - %c", word[2]);
+	}
+	else if (task_num==10)
+	{
+		char symbol[]="k2sg45klmn1t";
+		for(int i=0;i<strlen(symbol);i++)
+		{
+			if((int)symbol[i]>=47&&(int)symbol[i]<=57)
+		    	symbol[i]='!';
+		}
+		printf("Vashe slovo: %s\n", symbol);	
+	}
+	else if (task_num==11)
+	{
+		char arr[2][6]={'a','k','2','+','l', '*', 'm', '-','t', '3', '+', '*'};
+		int count1=0;
+		int count2=0;
+		int count3=0;
+	
+		for(int i=0;i<2;i++)
+		{
+			for(int j=0;j<6;j++)
+			{
+				if (arr[i][j]=='+')
+			    	count1++;
+				else if (arr[i][j]=='-')
+			    	count2++;
+				else if (arr[i][j]=='*')
+			    	count3++;
+			}
+		}
+		printf("Kol-vo + ravno: %d\n", count1);
+		printf("Kol-vo - ravno: %d\n", count2);
+		printf("Kol-vo * ravno: %d\n", count3);	
+	}
+	else if (task_num==12)
+	{
+		char arr[]="absdl:1t2n";
+		int count=0;
+	
+		for(int i=0;i<10;i++)
+		{
+			if (arr[i]!=':')
+		    	count++;
+			else
+		    	break;
+		}
+	
+		printf("Kol-vo simvolov predshestvuyushih : ravno: %d", count);
+	}
+	else if (task_num==13)
+	{
+		char arr[]="kabc2dlabctrn1h";
+		int count=0;
+	
+		for (int i=0;i<15;i++)
+		{
+			if((arr[i]=='a')&&(arr[i+1]=='b')&&(arr[i+2]=='c'))
+		    	count++;
+		}
+		printf ("Kol-vo abc ravno: %d", count);
+	}
+	return 0;
+}
